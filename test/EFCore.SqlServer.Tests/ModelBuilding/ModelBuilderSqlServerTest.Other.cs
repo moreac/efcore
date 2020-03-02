@@ -20,6 +20,6 @@ namespace Microsoft.EntityFrameworkCore.ModelBuilding
                 .Options;
 
         protected override void RunThrowDifferPipeline(DbContext context)
-            => context.GetService<IMigrationsModelDiffer>().GetDifferences(null, context.Model);
+            => context.GetService<IMigrationsModelDiffer>().GetDifferences(null, context.Model.GetRelationalModel());
     }
 }
